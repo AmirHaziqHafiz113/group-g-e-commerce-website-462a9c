@@ -46,14 +46,14 @@ const AppTopbar = (props) => {
     return (
         <div className="layout-topbar">
             <Link to="/">
-                <div className="cursor-pointer min-w-max flex align-items-end">
-                    {/* <img src={"assets/logo/cb-logo.svg"} height={30} className="mb-1" /> */}
-                    <h3 className="text-red-500" style={{ fontFamily: "MarlinGeo", fontWeight: "bolder", margin: 0 }}>
-                        react-frontend
-                    </h3>
-                </div>
-            </Link>
+            <div className="cursor-pointer min-w-max flex align-items-end">
+  <img src={"assets/logo/logo.png"} height={50} className="mb-1" style={{ marginRight: "10px" }} />
+  <h3 className="text-1500" style={{ fontFamily: "MarlinGeo", fontWeight: "bolder", margin: 0, color: "black", lineHeight: "50px" }}>
+    Attire Alley
+  </h3>
+</div>
 
+            </Link>
             {props.showSideMenuButton ? (
                 <button type="button" className="p-link  layout-menu-button layout-topbar-button" onClick={props.onToggleMenuClick}>
                     <i className="pi pi-bars" />
@@ -81,6 +81,14 @@ const AppTopbar = (props) => {
                         </button>
                     </li>
                 ) : null}
+                {props.onCart ? (
+                    <li>
+                        <button className="p-link layout-topbar-button" onClick={props.onCart}>
+                            <i className="pi pi-shopping-cart" />
+                            <span>Cart</span>
+                        </button>
+                    </li>
+                ) : null}
                 {props.isLoggedIn ? (
                     <Button className="p-button-rounded p-button-outlined ml-3" style={{ zIndex: 20 }} icon="pi pi-user" label={props.user?.email} onClick={toggleUserMenu} aria-controls="user-popup-menu" aria-haspopup />
                 ) : (
@@ -102,7 +110,7 @@ const AppTopbar = (props) => {
 
 const mapState = (state) => {
     const { isLoggedIn, user } = state.auth;
-    return { isLoggedIn, user };
+    return { isLoggedIn,  user };
 };
 const mapDispatch = (dispatch) => ({
     logout: () => dispatch.auth.logout(),

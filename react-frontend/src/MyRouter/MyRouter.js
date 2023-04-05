@@ -168,8 +168,9 @@ const MyRouter = () => {
                     mobileTopbarMenuActive={mobileTopbarMenuActive}
                     onMobileTopbarMenuClick={onMobileTopbarMenuClick}
                     onMobileSubTopbarMenuClick={onMobileSubTopbarMenuClick}
-                    // onAccount={() => history.push("/account")}
-                    // onSettings={() => history.push("/settings")}
+                    onAccount={() => history.push("/account")}
+                    onSettings={() => history.push("/settings")}
+                    onCart={() => history.push("/shoppingorder")}
                 />
             )}
 
