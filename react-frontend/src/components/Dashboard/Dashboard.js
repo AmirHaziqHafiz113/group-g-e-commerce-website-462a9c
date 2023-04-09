@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import welcomeImg from "../../assets/media/welcome-banner.png";
+import { Galleria } from 'primereact/galleria';
 
 const Dashboard = (props) => {
     const history = useHistory();
