@@ -8,7 +8,23 @@ const Dashboard = (props) => {
     const history = useHistory();
     useEffect(() => {}, []);
 
+    const itemTemplate = (item) => {
+        return (
+          <div className="p-grid p-nogutter p-align-center">
+            <div className="p-col-fixed">
+              <img src={item.imageUrl} alt={item.name} className="product-image" />
+            </div>
+            <div className="p-col">
+              <h4>{item.name}</h4>
+              <p>{item.description}</p>
+              <p>{item.price}</p>
+            </div>
+          </div>
+        );
+      };
+
     return (
+        
         <div className="col-12 flex flex-column align-items-center">
             <div className="flex w-10">
                 <div className=" w-8">
@@ -31,7 +47,7 @@ const Dashboard = (props) => {
                     <p>You are ready to go!</p>
                 </div>
             </div>
-            <div className="card w-10 my-6">
+            {/* <div className="card w-10 my-6">
                 <h4>REST API Ready</h4>
                 <p className="underline m-0">e.g. Authentication</p>
                 <p>POST http://localhost:3030/authentication {`{ "email": "example@email.com",    "password": "123456" }`}</p>
@@ -48,7 +64,7 @@ const Dashboard = (props) => {
                 <p className="m-0">
                     DELETE {`=>`} DELETE http://localhost:3030/users/{`<userId>`}
                 </p>
-            </div>
+            </div> */}
         </div>
     );
 };
