@@ -23,10 +23,10 @@ import "../App.scss";
 import "../customStyles.css";
 
 import LoginPage from "../components/LoginPage/LoginPage";
+import AdminPage from "../components/Admin/AdminPage";
 import SignUpPage from "../components/LoginPage/SignUpPage";
 import NoMatch from "./NoMatch";
 import MainLayout from "../components/Layouts/MainLayout";
-
 import Account from "../components/Account/Account";
 import ToastWrapper from "./wrappers/ToastWrapper";
 import StartupWrapper from "./wrappers/StartupWrapper";
@@ -183,6 +183,7 @@ const MyRouter = () => {
                 <Switch>
                     <Route path="/" exact render={() => <Dashboard colorMode={layoutColorMode} location={location} />} />
                     <Route path="/dashboard" exact render={() => <Dashboard colorMode={layoutColorMode} location={location} />} />
+                    <Route path="/admin" component={AdminPage} />
                     <Route path="/login" component={LoginPage} />
                     <Route path="/signup" exact component={SignUpPage} />
                     <Route path="/account" component={Account} />

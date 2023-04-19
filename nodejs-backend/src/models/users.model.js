@@ -12,7 +12,7 @@
        password: { type: String, required: true },
        address: { type: String },
        phoneNumber: { type: Number },
-       isAnAdmin: { type: Boolean, required: true },
+       isAnAdmin: { type: Boolean },
 
     }
           // ~cb-read-end~

@@ -15,9 +15,19 @@ const LoginPage = (props) => {
     const [maskPassword, setMaskPassword] = useState(true);
     const history = useHistory();
 
+    const redirectToAppropriatePage = () => {
+        if (props.isAnAdmin) {
+            history.push("/admin");
+        } else {
+            history.push("/");
+        }
+    };
+
     useEffect(() => {
-        if (props.isLoggedIn === true) history.push("/");
-    }, [props.isLoggedIn]);
+        if (props.isLoggedIn === true) {
+            redirectToAppropriatePage();
+        }
+    }, [props.isLoggedIn, props.isAnAdmin]);
 
     const onEnter = (e) => {
         if (e.key === "Enter") login();
@@ -25,9 +35,13 @@ const LoginPage = (props) => {
 
     const login = () => {
         if (validate()) {
-            props.login({ email, password }).then(() => {
-                history.push("/");
-            });
+            props.login({ email, password })
+                .then(() => {
+                    redirectToAppropriatePage();
+                })
+                .catch((error) => {
+                    // ... Error handling code
+                });
         }
     };
 
@@ -80,11 +94,12 @@ const LoginPage = (props) => {
 };
 
 const mapState = (state) => {
-    const { isLoggedIn } = state.auth;
-    return { isLoggedIn };
+    const { isLoggedIn, isAnAdmin } = state.auth;
+    return { isLoggedIn, isAnAdmin };
 };
 const mapDispatch = (dispatch) => ({
     login: (data) => dispatch.auth.login(data),
+    adminLogin: (data) => dispatch.auth.adminLogin(data),
     alert: (data) => dispatch.toast.alert(data),
 });
 

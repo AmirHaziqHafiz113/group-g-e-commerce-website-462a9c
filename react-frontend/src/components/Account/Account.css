@@ -1,0 +1,44 @@
+/* src/components/Account.css */
+
+.account-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+}
+
+.account-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    color: #ffffff;
+}
+
+.account-avatar {
+    margin-bottom: 1rem;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.account-title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.account-info {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.account-info-label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
