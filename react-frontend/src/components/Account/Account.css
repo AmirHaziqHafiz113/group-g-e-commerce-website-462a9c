@@ -1,44 +1,44 @@
-/* src/components/Account.css */
-
 .account-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     width: 100%;
-    background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+    padding: 1rem;
 }
 
 .account-card {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.avatar-container {
+    display: flex;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding: 2rem;
-    color: #ffffff;
+    align-items: center;
+    background-color: #007bff;
+    width: 50%;
 }
 
 .account-avatar {
-    margin-bottom: 1rem;
-    border: 3px solid #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 6rem;
+    width: 6rem;
 }
 
-.account-title {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    font-weight: bold;
+.user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem;
+    width: 50%;
 }
 
-.account-info {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.account-info-label {
-    font-weight: bold;
-    margin-right: 0.5rem;
+.account-name,
+.account-email {
+    margin: 0;
+    font-size: 1rem;
 }
